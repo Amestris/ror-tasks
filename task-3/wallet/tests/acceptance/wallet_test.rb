@@ -61,7 +61,7 @@ describe "wallet" do
     end
     specify "selling all facebook stocks" do
       set_wallet_balance :pln => 200
-      set_wallet_company_shares :facebook => 5
+      set_wallet_company_stocks :facebook => 5
       set_stock_price(:pln, "facebook", 20)
       sell_stocks("facebook")
       get_wallet_balance(:pln).should == 400
