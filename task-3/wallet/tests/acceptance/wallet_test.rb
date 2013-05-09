@@ -22,14 +22,21 @@ describe "wallet" do
   end
   
   context "demand money to be transfered back to his/her bank account" do
-    specify "can demand all money to be transfered back to bank account" do      
+    specify "can  all money to be tnsferransfered back to bank account" do      
       set_bank_account_balance(200)
       set_wallet_balance :eur => 100, :pln => 200
-      set_exchange_rate [:eur,:pln] => 4.15
-      transfer_money_from_bank_to_wallet(:pln)
-      get_wallet_balance(:eur).should == 0
+      transfer_money_from_wallet_to_bank(:pln)
+      get_wallet_balance(:eur).should == 100
       get_wallet_balance(:pln).should == 0
-      get_bank_account_balance().should == 615
+      get_bank_account_balance().should == 400
+    end
+    specify "can transfer money to bank account with limit" do
+      set_bank_account_balance(200)
+      set_wallet_balance :eur => 100, :pln => 200
+      transfer_money_from_wallet_to_bank(:pln, 100)
+      get_wallet_balance(:eur).should == 100
+      get_wallet_balance(:pln).should == 100
+      get_bank_account_balance().should == 300
     end
   end
 
