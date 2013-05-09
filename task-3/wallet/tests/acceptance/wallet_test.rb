@@ -1,3 +1,4 @@
+require_relative 'wallet_test_helper'
 describe "wallet" do
   include WalletTestHelper
 
@@ -9,16 +10,7 @@ describe "wallet" do
       get_wallet_balance(:eur).should == 100
       get_wallet_balance(:pln).should == 100
       get_bank_account_balance().should == 100
-    end
-    specify "can transfer money from a bank account to wallet in not pln currency with limit" do
-      set_bank_account_balance(200)
-      set_wallet_balance :eur => 100, :pln => 200
-      set_exchange_rate [:eur,:pln] => 4.15
-      transfer_money_from_bank_to_wallet(:eur, 100)
-      get_wallet_balance(:eur).should == 124,09
-      get_wallet_balance(:pln).should == 200
-      get_bank_account_balance().should == 100
-    end
+    end    
     specify "can transfer money from a bank account to wallet without limit" do
       set_bank_account_balance(200)
       set_wallet_balance :eur => 100, :pln => 200
@@ -28,8 +20,9 @@ describe "wallet" do
       get_bank_account_balance().should == 0
     end
   end
+  
   context "demand money to be transfered back to his/her bank account" do
-    specify "can demand all money to be transfered back to bank account"       
+    specify "can demand all money to be transfered back to bank account" do      
       set_bank_account_balance(200)
       set_wallet_balance :eur => 100, :pln => 200
       set_exchange_rate [:eur,:pln] => 4.15
@@ -61,7 +54,7 @@ describe "wallet" do
   context " buying and selling stocks according to stock exchange rates" do    
     specify "buying facebook stock with limit" do
       set_wallet_balance :pln => 150
-      set_stock_price (:pln, "facebook", 20)
+      set_stock_price(:pln, "facebook", 20)
       buy_stocks(:pln, "facebook", 5)
       get_wallet_balance(:pln).should == 50
       get_wallet_company_stocks("facebook").should == 5 
@@ -77,7 +70,7 @@ describe "wallet" do
     specify "selling 3 facebook stocks" do
       set_wallet_balance :pln => 150
       set_wallet_company_stocks :facebook => 5
-      set_stock_price (:pln, "facebook", 20)
+      set_stock_price(:pln, "facebook", 20)
       sell_stocks("facebook", 3)
       get_wallet_balance(:pln).should == 210
       get_wallet_company_stocks("facebook").should == 2

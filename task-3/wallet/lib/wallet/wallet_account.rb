@@ -9,18 +9,19 @@ module VirtualWallet
 
         def add(amount)
           check_amount(amount)
-          @balance -= amount
+          @balance += amount
         end
 
         def substract(amount)
           check_amount(amount)
-          @balance += amount
+          @balance -= amount
         end
 
         private
         def check_amount(amount)
           raise InvalidArgument.new("Amount of money cannot be nil") if amount.nil?
         end
-      end
+        
+      
   end
 end

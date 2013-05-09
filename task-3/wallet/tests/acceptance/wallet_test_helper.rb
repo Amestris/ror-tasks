@@ -1,5 +1,5 @@
-$:.unshift(File.join(File.dirname(__FILE__),"lib"))
-require "virtual_wallet"
+require "../../lib/virtual_wallet"
+
 include VirtualWallet
 
 module WalletTestHelper
