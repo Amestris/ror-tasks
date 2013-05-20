@@ -1,5 +1,4 @@
 require_relative '../../lib/virtual_wallet/wallet_account'
-require_relative '../../lib/virtual_wallet/exchanger'
 require_relative '../../lib/virtual_wallet/exceptions'
 require_relative 'spec_helper'
 
@@ -46,20 +45,6 @@ module VirtualWallet
 
     it "should not accept invalid deposits" do
       expect { account.add(nil)}.to raise_error(InvalidArgument)
-    end
-    
-    it "should accept transfering money between different currency" do
-      exchanger = Exchanger.new(account_pl,account, 4.15)
-      exchanger.exchange(50)
-      account.balance.should == 112.05
-      account_pl.balance.should == 100
-    end
-    
-    it "should transfer all money from 1 currency to other" do
-      exchanger = Exchanger.new(account_pl,account, 4.15)
-      exchanger.exchange()
-      account.balance.should == 136.14
-      account_pl.balance.should == 0
     end
     
   end

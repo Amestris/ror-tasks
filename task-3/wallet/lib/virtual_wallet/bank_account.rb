@@ -10,7 +10,7 @@ module VirtualWallet
     end
     
     def substract(money)
-      @balance += money
+      @balance -= money
     end
     
   end

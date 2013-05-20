@@ -58,7 +58,7 @@ module WalletTestHelper
   #stocks operations
   def set_stock_price(currency, company, price)
   	@stocks ||= []
-	  stock = @stocks.find(:company => company)	  
+	  stock = @stocks.find{|s| s.company == company}	  
 	  if stock
 		  stock.price = price
 	  else
@@ -67,13 +67,13 @@ module WalletTestHelper
   end
     
   def buy_stocks(currency, company, ammount)
-	  stock = @stocks.find(:company => company)
+	  stock = @stocks.find{|s| s.company == company}
 	  find_wallet_account(currency).substract(ammount* stock.price)
 	  find_wallet_company(company).buy(ammount)
   end
   
   def sell_stocks(company, ammount=nil)
-    stock = @stocks.find(:company => company)
+    stock = @stocks.find{|s| s.company == company}
     
     wallet_account = find_wallet_account(stock.currency)
     if wallet_account
