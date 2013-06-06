@@ -1,0 +1,9 @@
+first_list:
+  title: "Pierwsza lista"
+  user: first_user
+second_list:
+  title: "Druga lista"
+  user: second_user
+third_list:
+  title: "Trzecia lista"
+  user: first_user
