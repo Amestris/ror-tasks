@@ -1,0 +1,24 @@
+first_todo_item:
+  title: "Pierwszy wpis"
+  date_due: <%= Time.parse("01/06/2013") %>
+  todo_list: first_list
+  description: "Siała baba mak"
+second_todo_item:
+  title: "Drugi wpis"
+  date_due: <%= Time.parse("02/06/2013") %>
+  todo_list: second_list
+  description: "Nie wiedziała jak"
+third_todo_item:
+  title: "Trzeci wpis"
+  date_due: <%= Time.parse("03/06/2013") %>
+  todo_list: first_list
+  description: "Dziadek wiedział, nie powiedział"
+fourth_todo_item:
+  title: "Czwarty wpis"
+  date_due: <%= Time.parse("04/06/2013") %>
+  todo_list: first_list
+  description: "A to było tak ..."
+fifth_todo_item:
+  title: "Ostatni wpis"
+  date_due: <%= Time.parse("05/06/2013") %>
+  todo_list: second_list
