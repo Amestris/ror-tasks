@@ -1,0 +1,35 @@
+first_todo_item:
+  id: 1
+  title: "Pierwszy wpis"
+  date_due: <%= Time.parse("01/06/2013") %>
+  todo_list_id: 1
+  description: "Siała baba mak"
+second_todo_item:
+  id: 2
+  title: "Drugi wpis"
+  date_due: <%= Time.parse("02/06/2013") %>
+  todo_list_id: 2
+  description: "Nie wiedziała jak"
+third_todo_item:
+  id: 3
+  title: "Trzeci wpis"
+  date_due: <%= Time.parse("03/06/2013") %>
+  todo_list_id: 1
+  description: "Dziadek wiedział, nie powiedział"
+fourth_todo_item:
+  id: 4
+  title: "Czwarty wpis"
+  date_due: <%= Time.parse("04/06/2013") %>
+  todo_list_id: 1
+  description: "A to było tak ..."
+fifth_todo_item:
+  id: 5
+  title: "Ostatni wpis"
+  date_due: <%= Time.parse("05/06/2013") %>
+  todo_list_id: 2
+sixth_todo_item:
+  id: 6
+  title: "kolejny wpis"
+  description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+  date_due: <%= Time.now-2.hours %>
+  todo_list_id: 2

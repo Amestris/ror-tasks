@@ -1,0 +1,16 @@
+first_user:
+  id: 1
+  name: "ewelina"
+  surname: "mijal"
+  email: "ewelina@1000i.pl"
+  password: "$2a$10$SRJ/jwqDGDq5kaJ1HAIeyO06ihxkthzL3JpCSui5Wi8Ue1W.OPb5G"
+  failed_login_count: "0"
+second_user:
+  id: 2
+  name: "Mafalda"
+  surname: "Hopkirk"
+  email: "mafalda@test.pl"
+  password: "$2a$10$SRJ/jwqDGDq5kaJ1HAIeyO06ihxkthzL3JpCSui5Wi8Ue1W.OPb5G"
+  failed_login_count: "0"
+  
+

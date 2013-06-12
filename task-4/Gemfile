@@ -3,4 +3,5 @@ source "http://www.rubygems.org"
 gem "activerecord", "3.2.13"
 gem "rake"
 gem 'sqlite3'
+gem 'bcrypt-ruby'
 gem 'rspec'

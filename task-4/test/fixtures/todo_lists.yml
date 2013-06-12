@@ -1,0 +1,12 @@
+first_list:
+  id: 1
+  title: "Pierwsza lista"
+  user_id: 1
+second_list:
+  id: 2
+  title: "Druga lista"
+  user_id: 2
+third_list:
+  id: 3
+  title: "Trzecia lista"
+  user_id: 1
