@@ -102,11 +102,14 @@ describe User do
       end
 
       it "should raise failed_login_count up to 2 and find suspicious user which was trying to hack this service" do
-        user
-        3.times do
-          User.authenticate("ewelina@1000i.pl", "bleble")
-        end
-        User.find_by_email("ewelina@1000i.pl").failed_login_count.should == 3
-        User.find_suspicious_users.count.should == 1
+        User.find_suspicious_users.count.should == 4
+      end
+      
+      it "should group users by number of failed login attempts" do
+        users = User.group_suspicious_users
+        users.has_key?(3).should == true
+        users.has_key?(4).should == true
+        users[3].count.should == 2
+        users[4].count.should == 2
       end
 end

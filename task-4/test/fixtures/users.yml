@@ -4,13 +4,27 @@ first_user:
   surname: "mijal"
   email: "ewelina@1000i.pl"
   password: "$2a$10$SRJ/jwqDGDq5kaJ1HAIeyO06ihxkthzL3JpCSui5Wi8Ue1W.OPb5G"
-  failed_login_count: "0"
+  failed_login_count: "3"
 second_user:
   id: 2
   name: "Mafalda"
   surname: "Hopkirk"
   email: "mafalda@test.pl"
   password: "$2a$10$SRJ/jwqDGDq5kaJ1HAIeyO06ihxkthzL3JpCSui5Wi8Ue1W.OPb5G"
-  failed_login_count: "0"
+  failed_login_count: "4"
+third_user:
+  id: 3
+  name: "Mafalda"
+  surname: "Hopkirk"
+  email: "mafalda1@test.pl"
+  password: "$2a$10$SRJ/jwqDGDq5kaJ1HAIeyO06ihxkthzL3JpCSui5Wi8Ue1W.OPb5G"
+  failed_login_count: "4"
+fourth_user:
+  id: 4
+  name: "Mafalda"
+  surname: "Hopkirk"
+  email: "mafalda2@test.pl"
+  password: "$2a$10$SRJ/jwqDGDq5kaJ1HAIeyO06ihxkthzL3JpCSui5Wi8Ue1W.OPb5G"
+  failed_login_count: "3"
   
 

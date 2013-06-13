@@ -24,6 +24,10 @@ class User < ActiveRecord::Base
   def self.find_suspicious_users
       where("failed_login_count > 2")
   end
+  
+  def self.group_suspicious_users
+      find_suspicious_users.group_by{|a| a.failed_login_count}
+  end
     
   def self.authenticate(email, password)
       if (user = find_by_email(email))
